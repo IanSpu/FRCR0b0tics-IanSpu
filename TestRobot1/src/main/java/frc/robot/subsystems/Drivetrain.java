@@ -30,20 +30,13 @@ public class Drivetrain extends SubsystemBase {
   // Set up differential drive:
   DifferentialDrive m_drive = new DifferentialDrive(m_leftMotors, m_rightMotors);
 
-  // Could set up encoders here
-
   public Drivetrain() {
-
     // Invert right motors:
     m_rightMotors.setInverted(true);
-
-    // Maybe more encoder stuff
   }
 
   // The actual drive method
   public void drive(double leftSpeed, double rightSpeed) {
     m_drive.tankDrive(leftSpeed * DrivetrainConstants.speedMultiplier, rightSpeed * DrivetrainConstants.speedMultiplier);
   }
-
-  // Tons more encoder stuff
 }

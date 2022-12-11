@@ -15,6 +15,7 @@ public final class Constants {
     public class DrivetrainConstants {
         public final static float speedMultiplier = 0.05f; // Limit the motor speed
 
+        // Drive motor IDs:
         public final static int leftMotor1ID = 0;
         public final static int leftMotor2ID = 1;
         public final static int leftMotor3ID = 2;

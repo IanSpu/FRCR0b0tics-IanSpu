@@ -24,7 +24,7 @@ public class DefaultDrive extends CommandBase {
     addRequirements(m_drivetrain);
   }
 
-  // Constantly running the drive method from our subsystem:
+  // Constantly running the drive method from the drivetrain subsystem:
   @Override
   public void execute() {
     m_drivetrain.drive(m_left.getAsDouble(), m_right.getAsDouble());

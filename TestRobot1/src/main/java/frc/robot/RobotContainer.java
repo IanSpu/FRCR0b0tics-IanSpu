@@ -19,16 +19,10 @@ public class RobotContainer {
   XboxController m_driverController = new XboxController(Constants.InputConstants.driverPort);
 
   public RobotContainer() {
-
-    // Set up inputs:
-    configureButtonBindings();
-
     // Set up DefaultDrive command as default to always run so it always looks for inputs to drive with.
     // We use the whole "() -> #" because of double supplier reasons (i think) (why use double supplier?) (it's dumb)
     m_drivetrain.setDefaultCommand(new DefaultDrive(m_drivetrain, () -> m_driverController.getLeftY(), () -> m_driverController.getRightY()));
   }
-
-  private void configureButtonBindings() {}
 
   public Command getAutonomousCommand() {
     return new DefaultAuto();
