@@ -6,14 +6,16 @@ package frc.robot;
 
 public final class Constants {
 
-    // Constants for input stuff
+    // Constants for input stuff:
     public class InputConstants {
-        public final static int driverPort = 0; // Which port is being used for the driver controller
+        // Port # for the driver controller:
+        public final static int driverPort = 0;
     }
 
-    //Constants for the drivetrain
+    //Constants for the drivetrain subsystem:
     public class DrivetrainConstants {
-        public final static float speedMultiplier = 0.05f; // Limit the motor speed
+        // Limit the motor speed:
+        public final static float speedMultiplier = 0.4f;
 
         // Drive motor IDs:
         public final static int leftMotor1ID = 0;
@@ -23,4 +25,7 @@ public final class Constants {
         public final static int rightMotor2ID = 4;
         public final static int rightMotor3ID = 5;
     }
+
+    // Different commands for controlling a pneumatic arm:
+    public enum PneumaticsCommandType {Up, Down, Maintain}
 }

@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 
 public class Drivetrain extends SubsystemBase {
 
-  // Set up motor controller groups:
+  // Create the motor controller group object(s):
   private final MotorControllerGroup m_leftMotors = new MotorControllerGroup(
     new CANSparkMax(DrivetrainConstants.leftMotor1ID, MotorType.kBrushed),
     new CANSparkMax(DrivetrainConstants.leftMotor2ID, MotorType.kBrushed),
@@ -27,15 +27,15 @@ public class Drivetrain extends SubsystemBase {
     new CANSparkMax(DrivetrainConstants.rightMotor3ID, MotorType.kBrushed)
   );
 
-  // Set up differential drive:
-  DifferentialDrive m_drive = new DifferentialDrive(m_leftMotors, m_rightMotors);
-
   public Drivetrain() {
     // Invert right motors:
     m_rightMotors.setInverted(true);
   }
 
-  // The actual drive method
+  // Create the differential drive object:
+  DifferentialDrive m_drive = new DifferentialDrive(m_leftMotors, m_rightMotors);
+
+  // Method for telling the motors to turn:
   public void drive(double leftSpeed, double rightSpeed) {
     m_drive.tankDrive(leftSpeed * DrivetrainConstants.speedMultiplier, rightSpeed * DrivetrainConstants.speedMultiplier);
   }

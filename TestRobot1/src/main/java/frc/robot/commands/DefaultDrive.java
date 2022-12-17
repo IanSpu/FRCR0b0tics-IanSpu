@@ -16,7 +16,7 @@ public class DefaultDrive extends CommandBase {
   private final DoubleSupplier m_left;
   private final DoubleSupplier m_right;
   
-  // Inputs as parameters:
+  // Inputs as parameters for constructor:
   public DefaultDrive(Drivetrain drivetrain, DoubleSupplier left, DoubleSupplier right) {
     m_drivetrain = drivetrain;
     m_left = left;
@@ -24,7 +24,7 @@ public class DefaultDrive extends CommandBase {
     addRequirements(m_drivetrain);
   }
 
-  // Constantly running the drive method from the drivetrain subsystem:
+  // Main method being ran by the command:
   @Override
   public void execute() {
     m_drivetrain.drive(m_left.getAsDouble(), m_right.getAsDouble());
