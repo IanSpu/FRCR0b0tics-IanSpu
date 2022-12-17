@@ -26,6 +26,12 @@ public final class Constants {
         public final static int rightMotor3ID = 5;
     }
 
+    // Constants for pneumatic subsystems:
+    public class PneumaticsConstants {
+        // Channels for the PCM:
+        public final static int forward = 1;
+        public final static int reverse = 0;
+    }
     // Different commands for controlling a pneumatic arm:
     public enum PneumaticsCommandType {Up, Down, Maintain}
 }
