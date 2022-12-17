@@ -32,6 +32,19 @@ public final class Constants {
         public final static int forward = 1;
         public final static int reverse = 0;
     }
-    // Different commands for controlling a pneumatic arm:
+    // Different actions for controlling a pneumatic arm:
     public enum PneumaticsCommandType {Up, Down, Maintain}
+
+    // Constants for the shooter subsystem/command:
+    public class ShooterConstants {
+        // Talon motor controller device numbers:
+        public final static int motorNum1 = 0;
+        public final static int motorNum2 = 1;
+
+        // Motor speeds for coresponding commands:
+        public final static double lowMotorSpeed = 0.15d;
+        public final static double highMotorSpeed = 0.22d;
+    }
+    // Different actions for controlling shooter wheels:
+    public enum ShooterCommandType {Low, High}
 }

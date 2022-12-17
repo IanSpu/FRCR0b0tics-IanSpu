@@ -5,20 +5,24 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Constants.PneumaticsCommandType;
+import frc.robot.Constants.ShooterCommandType;
 import frc.robot.commands.DefaultAuto;
 import frc.robot.commands.DefaultDrive;
+import frc.robot.commands.DefaultShoot;
 import frc.robot.commands.PneumaticCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.PneumaticArm;
-import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import frc.robot.subsystems.Shooter;
 
 public class RobotContainer {
   
   // Creating the subsystem object(s):
   private final Drivetrain m_drivetrain = new Drivetrain();
   private final PneumaticArm m_pneuArm = new PneumaticArm();
+  private final Shooter m_shooter = new Shooter();
 
   // Creating the controller object(s):
   XboxController m_driverController = new XboxController(Constants.InputConstants.driverPort);
@@ -41,11 +45,17 @@ public class RobotContainer {
   public void configureButtonBindings() {
     // Pneumatic buttons:
     new JoystickButton(m_driverController, XboxController.Button.kRightStick.value)
-      .whenPressed(new PneumaticCommand(m_pneuArm, PneumaticsCommandType.Up));
+      .toggleWhenPressed(new PneumaticCommand(m_pneuArm, PneumaticsCommandType.Up), true);
     new JoystickButton(m_driverController, XboxController.Button.kLeftStick.value)
-      .whenPressed(new PneumaticCommand(m_pneuArm, PneumaticsCommandType.Down));
+      .toggleWhenPressed(new PneumaticCommand(m_pneuArm, PneumaticsCommandType.Down), true);
+    new JoystickButton(m_driverController, XboxController.Button.kX.value)
+      .toggleWhenPressed(new PneumaticCommand(m_pneuArm, PneumaticsCommandType.Maintain), true);
+
+    // Shooter buttons:
+    new JoystickButton(m_driverController, XboxController.Button.kLeftBumper.value)
+      .whileHeld(new DefaultShoot(m_shooter, ShooterCommandType.Low));
     new JoystickButton(m_driverController, XboxController.Button.kRightBumper.value)
-      .whenPressed(new PneumaticCommand(m_pneuArm, PneumaticsCommandType.Maintain));
+      .whileHeld(new DefaultShoot(m_shooter, ShooterCommandType.High));
   }
 
   public Command getAutonomousCommand() {

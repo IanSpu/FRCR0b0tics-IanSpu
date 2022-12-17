@@ -23,4 +23,9 @@ public class PneumaticCommand extends CommandBase {
     else if (m_commandType == PneumaticsCommandType.Down) m_armSub.armDown();
     else m_armSub.armMaintain();
   }
+
+  @Override
+  public void end(boolean interrupted) {
+    m_armSub.armMaintain();
+  }
 }
