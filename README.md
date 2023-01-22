@@ -18,7 +18,7 @@ This repository contains mostly helpful websites, guides, and example robot code
 ---
 ## Examples:
 - [GitHub-WPILib](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples)
-
+---
 ## Main Guides:
 
 - "FRCInstallations" https://docs.google.com/document/d/1GAv-Qmrh3EBGL3yFJPKtPE1eDD8jmGCwlykpnyI26zQ/edit?usp=sharing
