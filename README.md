@@ -4,6 +4,8 @@ This repository contains mostly helpful websites, guides, and example robot code
 
 ---
 
+- [Resources](https://www.firstinspires.org/resource-library/frc/technical-resources)
+
 ## Installations:
 
 - [WPILib](https://github.com/wpilibsuite/allwpilib/releases/tag/v2022.4.1)
