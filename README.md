@@ -5,6 +5,7 @@ This repository contains mostly helpful websites, guides, and example robot code
 ---
 
 - [Resources](https://www.firstinspires.org/resource-library/frc/technical-resources)
+- [Apriltag](https://docs.google.com/document/d/1QVc_n0SwDZ_4ceCXCD3oGk_v6nOnEJ1qrSmOoss-TYA/edit)
 
 ## Installations:
 
